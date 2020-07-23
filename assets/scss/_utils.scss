@@ -1,0 +1,139 @@
+$black: #252525;
+$white: #ffffff;
+$tomato: #e5493a;
+$brownish-grey: #636363;
+$greyish-brown: #464646;
+$warm-grey: #959595;
+$booger: #8dc63f;
+$black-0: rgba(54, 54, 54, 0);
+$white-25: rgba(255, 255, 255, 0.25);
+$tomato-0: rgba(229, 73, 58, 0);
+$pinkish-grey: #cccccc;
+$blush: #f4897e;
+$white-0: rgba(255, 255, 255, 0);
+$white-20: rgba(255, 255, 255, 0.2);
+$lightblue: #6dcff6;
+$light-sky-blue: #c7efff;
+$pale-red: #d4392a;
+$dark: #172322;
+$cool-grey: #9ca0a0;
+$slate-grey: #6b6f70;
+$azure: #00adef;
+$seafoam-blue: #7accc8;
+$lipstick: #e52e2f;
+$coral: #f05d4f;
+$cerulean: #009ed9;
+$golden-yellow: #fecc17;
+$goldenrod: #f8c50b;
+$avocado: #83bc35;
+$twilight: #605ca8;
+$very-light-pink: #fbe9e7;
+$pale-grey: #e7f0f3;
+$light-tan: #f8ecc2;
+$light-sage: #dff2c6;
+$dusty-orange: #f06758;
+
+$roboto : roboto;
+$raleway: raleway;
+@mixin flexPrSet($direction,$wrapValue,$mainJustify,$extraJustify){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrapValue;
+    justify-content: $mainJustify;
+    align-items: $extraJustify;
+}
+@mixin positionedItem($posValue,$top,$right,$bottom,$left,$zValue){
+    position: $posValue;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $zValue;
+}
+@mixin center($zValue:null) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: $zValue;
+}
+@mixin centerHor($zValue:null) {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: $zValue;
+}
+@mixin centerVer($zValue:null) {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    z-index: $zValue;
+}
+@mixin fontSet($color,$ltrSpcVal,$args...) {
+    color: $color;
+    letter-spacing: $ltrSpcVal;
+    font: $args;
+}
+@mixin sectionTitle($mainColor,$extraColor,$lineColor:$mainColor) {
+        text-align: center;
+        padding: 0 0 35px;
+        max-width: 570px;
+        margin: 0 auto 40px;
+        @include positionedItem(relative,null,null,null,null,null);
+        @include fontSet($extraColor,0,400 normal 1.4rem/2rem $roboto);
+        h2 {
+            margin: 0 0 20px;
+            @include fontSet($mainColor,0,700 normal 3rem/1 $raleway);
+        }
+        &::after {
+            content: "";
+            height: 2px;
+            width: 170px;
+            background: $lineColor;
+            @include positionedItem(absolute,null,0,0,200px,null);
+        }
+}
+@mixin imgFix {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+@mixin slick {
+    .slick-slide { outline: 0; }
+    .slick-list { overflow: hidden; }
+    .slick-track { @include flexPrSet(null,null,null,null); }
+}
+@mixin slickDots {
+    .slick-dots {
+        list-style: none;
+        @include flexPrSet(null,null,null,null);
+        button {
+            outline: 0;
+            border: 0;
+            font-size: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .4s;
+        }
+    }
+}
+@mixin slickArrows {
+    .slick-arrow {
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: .4s;
+    }
+}
+@mixin footerMiniTitle {
+    @include fontSet(#fff,0,700 normal 2.4rem/1 $roboto);
+    &::after {
+        content: "";
+        display: block;
+        background: #e5493a;
+        width: 70px;
+        height: 2px;
+        margin: 20px 0;
+    }
+}

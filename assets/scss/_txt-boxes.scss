@@ -1,0 +1,23 @@
+@import 'utils';
+.text-box {
+    &-style-1 {
+        padding: 40px 0 55px;
+        text-align: center;
+        background: #363636;
+        @include positionedItem(relative,null,null,null,null,null);
+        h2 {
+            margin: 5px 0 10px;
+            @include fontSet(#959595,0,700 normal 3.2rem/1 $raleway);
+        }
+        p {
+            @include fontSet(#707070,0,400 normal 2.4rem/1 $raleway);
+        }
+        &:after {
+            content: "";
+            @include positionedItem(absolute,null,null,0,50%,null);
+            transform: translate(-50%,0);
+            border: 16px solid transparent;
+            border-bottom-color: #fff;
+        }
+    }
+}

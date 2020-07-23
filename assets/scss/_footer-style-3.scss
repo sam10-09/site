@@ -1,0 +1,249 @@
+@import 'utils';
+
+.footer {
+    background: #252525;
+    .container {
+        padding: 60px 0;
+        @include flexPrSet(null,wrap,space-between,null);
+    }
+    .about-exo {
+        max-width: 270px;
+        flex: 0 0 100%;
+        &__inner { @include fontSet(#636363,0,400 normal 1.4rem/2rem $roboto); }
+        &__header {
+            margin: 0 0 0 -5px;
+            @include flexPrSet(null,null,null,center);
+            h3 {
+                margin: 30px 0 0 35px;
+                @include fontSet(#363636,0,700 normal 1rem/1 $roboto);
+            }
+        }
+        &__text { margin: 15px 0; }
+        &__link {
+            margin: 0 0 35px;
+            a {
+                text-decoration: none;
+                color: #e5493a;
+                cursor: pointer;
+                &::after {
+                    margin: 0 0 0 5px;
+                    content: "\00BB";
+                }
+            }
+        }
+        &__form {
+            @include fontSet(#464646,0,400 normal 1.4rem/2rem $roboto);
+            p { @include fontSet(#fff,0,700 normal 1.8rem/2rem $roboto); }
+            label {
+                display: block;
+                overflow: hidden;
+                border-radius: 3px;
+                margin: 14px 0 18px;
+                @include positionedItem(relative,null,null,null,null,null);
+                &::after {
+                    content: "\f0e0";
+                    @include fontSet(#363636,0,900 1.4rem/1 'Font Awesome 5 Free');
+                    @include positionedItem(absolute,15px,15px,15px,null,null);
+                }
+                input {
+                    display: block;
+                    width: 100%;
+                    outline: 0;
+                    border: 0;
+                    background: #171717;
+                    padding: 10px 30px;
+                    @include fontSet(#464646,0,400 normal 1.4rem/2rem $roboto);
+                    &::placeholder { @include fontSet(inherit,inherit,inherit) }
+                }
+            }
+            h5 { font-size: 1.3rem; }
+        }
+    }
+    .latest-news {
+        max-width: 270px;
+        flex: 0 0 100%;
+        &__title {
+            padding: 20px 0 0;
+            margin: 0 0 10px;
+            @include footerMiniTitle;
+        }
+        &-article {
+            list-style: none;
+            cursor: pointer;
+            @include flexPrSet(null,null,null,null);
+            &:hover {
+                .latest-news-article__img .fa-search { opacity: 1; }
+                .latest-news-article__content p { color: #e5493a; }
+                .latest-news-article__content span { color: #fff; }
+            }
+            &__img {
+                overflow: hidden;
+                border-radius: 3px;
+                margin: 0 15px 0 0;
+                max-width: 70px;
+                flex: 0 0 100%;
+                padding: 5px 0 0;
+                @include positionedItem(relative,null,null,null,null,null);
+                .fa-search {
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: #252525;
+                    font-size: 1rem;
+                    color: #fff;
+                    opacity: 0;
+                    transition: .4s;
+                    cursor: pointer;
+                    @include flexPrSet(null,null,center,center);
+                    @include center(2);
+                }
+            }
+            &__content {
+                transition: .4s;
+                @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+                span {
+                    display: inline-block;
+                    color: #464646;
+                    margin: 5px 0 0;
+                }
+            }
+            &:not(:first-child) {
+                margin: 31px 0 0;
+                @include positionedItem(relative,null,null,null,null,null);
+                &::before {
+                    content: "";
+                    height: 1px;
+                    background: #363636;
+                    @include positionedItem(absolute,-16px,0,null,0,null);
+                }
+            }
+        }
+    }
+    .twitter-widgets {
+        max-width: 270px;
+        flex: 0 0 100%;
+        margin: 0 0 0 30px;
+        &__title {
+            padding: 20px 0 0;
+            margin: 0 0 10px;
+            @include footerMiniTitle;
+        }
+        &-article {
+            list-style: none;
+            @include flexPrSet(null,null,null,null);
+            @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+            &:not(:first-child) {
+                margin: 31px 0 0;
+                @include positionedItem(relative,null,null,null,null,null);
+                &::before {
+                    content: "";
+                    height: 1px;
+                    background: #363636;
+                    @include positionedItem(absolute,-16px,0,null,0,null);
+                }
+            }
+            &__logo {
+                max-width: 20px;
+                height: 20px;
+                flex: 0 0 100%;
+                border-radius: 50%;
+                background: #464646;
+                font-size: 1rem;
+                margin: 0 15px 0 0;
+                @include flexPrSet(null,null,center,center);
+            }
+            &__content {
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+                p::after {
+                    display: block;
+                    content: attr(data-date);
+                    margin: 15px 0 0;
+                    @include fontSet(#464646,0,400 normal 1.3rem/2rem $roboto);
+                }
+            }
+        }
+    }
+    .get-in-touch {
+        max-width: 270px;
+        flex: 0 0 100%;
+        @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+        &__title {
+            padding: 20px 0 0;
+            margin: 0 0 10px;
+            @include footerMiniTitle;
+        }
+        &__el {
+            list-style: none;
+            @include flexPrSet(null,null,space-between,null);
+            &:not(:first-child) {
+                margin: 37px 0 0;
+                @include positionedItem(relative,null,null,null,null,null);
+                &::before {
+                    content: "";
+                    height: 1px;
+                    background: #363636;
+                    @include positionedItem(absolute,-24px,0,null,0,null);
+                }
+            }
+            div {
+                &:nth-child(odd) {
+                    color: #636363;
+                }
+                &:nth-child(even) {
+                    max-width: 170px;
+                    flex-basis: 100%;
+                }
+                span { @include fontSet(#636363,0,400 normal 1.3rem/2rem $roboto); }
+                a {
+                    color: inherit; 
+                    text-decoration: none;
+                    &[href^="mailto"] { color: #e5493a; }
+                }
+            }
+            ul { @include flexPrSet(null,wrap,null,null); }
+            li {
+                list-style: none;
+                display: block;
+                width: 16px;
+                height: 16px;
+                border-radius: 3px;
+                background: #464646;
+                font-size: 1rem;
+                transition: .4s;
+                @include flexPrSet(null,null,center,center);
+                &:not(:last-child) { margin: 0 5px 5px 0; }
+                &:hover {
+                    background: #e5493a;
+                    color: #000;
+                }
+            }
+        }
+    }
+    &__nav {
+        background: #111111;
+        .container {
+            padding: 30px 0;
+            @include flexPrSet(null,null,null,null);
+        }
+        ul {
+            margin: 0 0 0 auto;
+            list-style: none;
+            @include flexPrSet(null,null,null,null);
+        }
+        li:not(first-child) { margin: 0 0 0 20px; }
+        a {
+            text-decoration: none;
+            @include fontSet(#464646,0,700 normal 1.4rem/2rem $raleway);
+            &.active,
+            &:hover { color: #e5493a; }
+        }
+    }
+    &__copyright {
+        @include fontSet(#464646,0,400 normal 1.4rem/2rem $roboto);
+        span { color: #959595; }
+    }
+}
