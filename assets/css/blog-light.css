@@ -504,6 +504,7 @@
 }
 
 .masonry-el__presentation #audio-volume__down {
+  display: none;
   margin: 0 15px;
   transition: 1s;
   visibility: hidden;
