@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Portfolio list</title>
+    <title>Blog</title>
     <link rel="stylesheet" type="text/css" href="assets/css/font.css">
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/fontawesome-free-5.13.1-web/css/all.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/portfolio-list-dark.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/blog-light.css">
 </head>
 <body>
     <div class="wrap">
@@ -107,290 +107,196 @@
         <main class="main">
             <section class="navigation">
                 <div class="container">
-                    <div class="navigation__current-pos">Portfolio Grid Full Screen</div>
+                    <div class="navigation__current-pos">Blog Masonry 04 Columns</div>
                     <nav class="navigation__links">
                         <p>You Are Here:</p>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Portfolio Grid Full Screen</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Blog Masonry 04 Columns</a></li>
                         </ul>
                     </nav>
                 </div>
             </section>
-            <section class="portfolio">
-                <div class="title">
-                    <h2>See Our <span class="highlight">Creative</span> Projects</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                </div>
-                <div class="portfolio-categories">
-                    <ul >
-                        <li><label for="option-1"><input type="radio" name="option" id="option-1" checked=""><span>All</span></label></li>
-                        <li><label for="option-2"><input type="radio" name="option" id="option-2"><span>Websites</span></label></li>
-                        <li><label for="option-3"><input type="radio" name="option" id="option-3"><span>Logo</span></label></li>
-                        <li><label for="option-4"><input type="radio" name="option" id="option-4"><span>Graphic Design</span></label></li>
-                        <li><label for="option-5"><input type="radio" name="option" id="option-5"><span>Development</span></label></li>
-                        <li><label for="option-6"><input type="radio" name="option" id="option-6"><span>Video</span></label></li>
-                        <li><label for="option-7"><input type="radio" name="option" id="option-7"><span>Photography</span></label></li>
+            <section class="content">
+                <div class="container">
+                    <ul class="masonry">
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <img class="masonry-el__img" src="assets/img/masonry-photo-1.png" alt="man">
+                                <div class="masonry-el__hover">
+                                  <i class="fas fa-search"></i>
+                                    <i class="fas fa-link"></i>
+                                </div>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Standard Post With Preview Image</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Photography</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <img class="masonry-el__img" src="assets/img/masonry-photo-2.png" alt="man">
+                                <div class="masonry-el__hover">
+                                  <i class="fas fa-search"></i>
+                                    <i class="fas fa-link"></i>
+                                </div>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Standard Post With Preview Image</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Creative and Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <div id="audio">
+                                    <audio src="assets/audio/nokia-tune.mp3" id="src"></audio>
+                                    <div id="audio-play-pause"></div>
+                                    <div id="audio-current-pos">2:57</div>
+                                    <div id="audio-progress">
+                                        <div id="audio-progress__current"></div>
+                                        <!-- <div id="audio-progress__buffered"></div> -->
+                                    </div>
+                                    <div id="audio-length">10:35</div>
+                                    <div id="audio-volume">
+                                        <div id="audio-volume__down"></div>
+                                        <div id="audio-volume__up"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Zhu – Cocaine Model</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Music</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <img class="masonry-el__img" src="assets/img/masonry-photo-3.png" alt="man">
+                                <div class="masonry-el__hover">
+                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-link"></i>
+                                </div>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Standard Post With Preview Image</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Creative and Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <img class="masonry-el__img" src="assets/img/masonry-photo-3.png" alt="man">
+                                <div class="masonry-el__hover">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Video Format Post</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Video</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <ul class="masonry-el__slider">
+                                    <li><img src="assets/img/masonry-photo-1.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-2.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-3.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-4.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-5.png" alt="photo"></li>
+                                </ul>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Standard Post With Gallery</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Photography</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__bg"><img src="assets/img/masonry-photo-7.png" alt="photo"></div>
+                            <blockquote class="masonry-el-blockquote">
+                                Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum est notare quam.
+                                <footer class="masonry-el-blockquote__footer"> Frank Smith, Company Inc. </footer>
+                            </blockquote>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation ">
+                                <img class="masonry-el__img masonry-el__img_youtube" src="assets/img/masonry-photo-8.png" alt="man">
+                            </div>
+                            <div class="masonry-el__inner masonry-el__inner_youtube">
+                                <h2>YouTube Video Post</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Video</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__ad">
+                                <h2><span>èxe</span> - Clean and Unigue PSD Template</h2>
+                                <a href="#">http://themeforest.net</a>
+                                <a href="#"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <ul class="masonry-el__slideshow">
+                                    <li><img src="assets/img/masonry-photo-1.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-2.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-3.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-4.png" alt="photo"></li>
+                                    <li><img src="assets/img/masonry-photo-5.png" alt="photo"></li>
+                                </ul>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Slideshow Post</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Photography</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__inner">
+                                <h2>Claritas est etiam processus dynamicus, qui sequitur mutationem</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Creative and Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per. </p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="masonry-el">
+                            <div class="masonry-el__presentation">
+                                <img class="masonry-el__img" src="assets/img/masonry-photo-6.png" alt="man">
+                                <div class="masonry-el__hover">
+                                  <i class="fas fa-search"></i>
+                                    <i class="fas fa-link"></i>
+                                </div>
+                            </div>
+                            <div class="masonry-el__inner">
+                                <h2>Standard Post With Preview Image</h2>
+                                <h4>By Admin &nbsp;&nbsp;/&nbsp;&nbsp; In Creative and Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
                     </ul>
-                </div>
-                <ul class="portfolio-works">
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-1.png" alt="photo-1">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-2.png" alt="photo-2">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-3.png" alt="photo-3">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-4.png" alt="photo-4">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-5.png" alt="photo-5">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-6.png" alt="photo-6">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-7.png" alt="photo-7">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-8.png" alt="photo-8">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-9.png" alt="photo-9">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="portfolio-work">
-                        <img src="assets/img/bg-photo-10.png" alt="photo-10">
-                        <div class="portfolio-work__inner">
-                            <h2>Claritas Est Processus</h2>
-                            <p>Graphic Designer, Photoshop</p>
-                            <div class="portfolio-work__hover">
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="portfolio__load-more">
-                    <button>LOAD MORE VIDEO</button>
+                    <div class="content__load-more"><button>LOAD MORE POSTS</button></div>
                 </div>
             </section>
-            <section class="review">
+            <section class="ad">
                 <div class="container">
-                    <div class="review__title">
-                        <h2>What <span>Buyers</span> Say About Us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="ad__text">
+                        <h2>The Best Solution for Your Business Projects</h2>
+                        <p>Qualitative PSD Template With Unlimited Possibilities</p>
                     </div>
-                    <ul class="review__slider">
-                        <li>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-1.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Jonathan Smith</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-2.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Britney Doe</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-2.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Britney Doe</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-1.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Jonathan Smith</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-1.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Jonathan Smith</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-2.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Britney Doe</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-2.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Britney Doe</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-1.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Jonathan Smith</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-1.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Jonathan Smith</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                            <div class="review__item">
-                                <div class="review__img"><img src="assets/img/testimonials-photo-2.png" alt="img"></div>
-                                <div class="review__body">
-                                    <div class="review__author">
-                                        <span>Britney Doe</span><span>www.themeforest.net</span>
-                                    </div>
-                                    <div class="review__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore etiam processus dynamicus, qui sequitur.</div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="our-happy">
-                <div class="container">
-                    <ul class="our-happy__slider">
-                        <li>
-                            <div>
-                                <img src="assets/img/01.png" alt="logo">
-                                <img src="assets/img/02.png" alt="logo">
-                                <img src="assets/img/03.png" alt="logo">
-                                <img src="assets/img/04.png" alt="logo">
-                                <img src="assets/img/05.png" alt="logo">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="assets/img/01.png" alt="logo">
-                                <img src="assets/img/02.png" alt="logo">
-                                <img src="assets/img/03.png" alt="logo">
-                                <img src="assets/img/04.png" alt="logo">
-                                <img src="assets/img/05.png" alt="logo">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="assets/img/01.png" alt="logo">
-                                <img src="assets/img/02.png" alt="logo">
-                                <img src="assets/img/03.png" alt="logo">
-                                <img src="assets/img/04.png" alt="logo">
-                                <img src="assets/img/05.png" alt="logo">
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="ad__link"><a href="#">LIVE PREVIEW</a></div>
                 </div>
             </section>
         </main>
@@ -553,5 +459,8 @@
     <script src="assets/js/jquery-migrate-3.1.0.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/masonry-exper.js"></script>
+    <script src="assets/js/audio.js"></script>
+
 </body>
 </html>
