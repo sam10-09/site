@@ -1,0 +1,47 @@
+@import "utils";
+:root{
+    font: 400 normal 62.5%/1.2 sans-serif;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    @include positionedItem(relative,null,null,null,null,null);
+    .to-top { @include toTopArrow; }
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+@import "header-style-3";
+@import "navigation-style-1";
+
+.navigation { background: url("../img/portfolio-dark-bg.png") center center/cover $accentColor; }
+.navigation .container { padding: 39px 0; }
+
+@import "portfolio-grid-10";
+
+.review {
+    .container { padding: 70px 0 80px; }
+    &__title { @include sectionTitle($eclipse,$warm-grey); }
+    @import "review-slider";
+    &__slider {
+        .slick-dots {
+            margin: 25px 0 0;
+            @include flexPrSet(null,null,center,null);
+        }
+        li { @include flexPrSet(null,null,space-between,null); }
+    }
+}
+
+@import "our-happy-clients";
+@import "footer-style-3";

@@ -1,0 +1,233 @@
+@import "utils";
+@import "audio";
+
+:root{
+    font: 400 normal 62.5%/1.2 sans-serif;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    @include positionedItem(relative,null,null,null,null,null);
+    .to-top { @include toTopArrow(355px); }
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+@import "header-style-1";
+@import "navigation-style-1";
+
+.content {
+    padding: 50px 0 80px;
+    &__load-more {
+        margin: 60px 0 0;
+        button {
+            display: block;
+            border: 0;
+            outline: 0;
+            background: $eclipse;
+            margin: 0 auto;
+            padding: 11px 30px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            @include fontSet($white,0,800 normal 1.2rem/2rem $raleway);
+        }
+    }
+}
+.masonry {
+    list-style: none;
+    @include flexPrSet(null,null,space-between,null);
+    .column { max-width: 270px; }
+    &-el {
+        width: 100%;
+        cursor: pointer;
+        margin: 0 0 30px;
+        @include positionedItem(relative,null,null,null,null,null);
+        &:hover {
+            .masonry-el__img { opacity: .8; }
+            .masonry-el__img_youtube { opacity: 1; }
+            .masonry-el__hover { opacity: 1; }
+            .masonry-el__inner:after {
+                background: $accentColor;
+                right: 30px;
+            }
+            .slick-slide img { opacity: 1; }
+        }
+        &__presentation {
+            @include positionedItem(relative,null,null,null,null,null);
+            @include audioPlayer($eclipse,$greyish-brown,$accentColor,$davy-grey,$brownish-grey);
+        }
+        &__slider {
+            list-style: none;
+            @include slick;
+            @include slickDots;
+            @include positionedItem(relative,null,null,null,null,null);
+            .slick-dots {
+                @include flexPrSet(null,null,center,null);
+                @include positionedItem(absolute,auto,0,20px,0,null);
+                button {
+                    background: $bright-gray;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 5px 0 0;
+                }
+            }
+            .slick-active button { background: $accentColor; }
+            .slick-slide {
+                height: 179px;
+                @include positionedItem(relative,null,null,null,null,null);
+                img {
+                    opacity: .5;
+                    transition: .4s;
+                    @include imgFix;
+                    @include positionedItem(absolute,0,0,0,0,null);
+                }
+            }
+        }
+        &__slideshow {
+            list-style: none;
+            @include positionedItem(relative,null,null,null,null,null);
+            @include slick;
+            @include slickArrows;
+            .slick-arrow {
+                background: rgba($eclipse,.1);
+                width: 22px;
+                height: 22px;
+                border-radius: 3px;
+                @include positionedItem(absolute,null,20px,20px,null,1);
+                @include flexPrSet(null,null,center,center);
+                @include fontSet($white,0,900 1rem/1 'Font Awesome 5 Free');
+                &:hover { background: $accentColor; }
+                &::before { content: "\f053"; }
+            }
+            .slick-prev{ right: 45px; }
+            .slick-next::before { content: "\f054"; }
+            .slick-slide { height: 179px; }
+        }
+        &__ad {
+            user-select: none;
+            cursor: initial;
+            text-align: center;
+            padding: 45px 30px 55px;
+            background: $maya-blue;
+            @include positionedItem(relative,null,null,null,null,null);
+            h2 {
+                margin: 0 0 11px;
+                @include fontSet($white,0,600 normal 2rem/1.2 $raleway);
+                span { font-weight: 700; }
+            }
+            a {
+                text-decoration: none;
+                @include fontSet($light-sky-blue,0,400 normal 1.4rem/2rem $roboto);
+            }
+            .fa-link {
+                font-size: 3.5rem;
+                @include positionedItem(absolute,null,20px,20px,null,null);
+            }
+        }
+        &__img {
+            display: block;
+            max-width: 100%;
+            object-fit: cover;
+            transition: .4s;
+            will-change: opacity;
+        }
+        &__hover {
+            opacity: 0;
+            transition: .4s;
+            will-change: opacity;
+            @include center(2);
+            @include flexPrSet(null,null,space-between,null);
+            i {
+                color: $white;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: $nero;
+                font-size: 1.4rem;
+                transition: .4s;
+                @include flexPrSet(null,null,center,center);
+                & + i { margin: 0 0 0 8px; }
+                &:hover { background-color: $accentColor; }
+            }
+        }
+        &__inner {
+            background: $snow;
+            padding: 21px 30px;
+            transition: .4s;
+            @include positionedItem(relative,null,null,null,null,null);
+            @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
+            &:after {
+                content: "";
+                height: 2px;
+                background: $eclipse;
+                transition: .4s;
+                @include positionedItem(absolute,null,170px,0,30px,2);
+            }
+            h2 {
+                transition: .4s;
+                @include fontSet($eclipse,0,600 normal 2rem/1 $raleway);
+            }
+            h4 {
+                margin: 10px 0;
+                @include fontSet($light-gray,0,400 normal 1.2rem/1 $roboto);
+            }
+            a {
+                display: inline-block;
+                margin: 30px 0 0;
+                text-decoration: none;
+                color: $eclipse;
+                transition: .4s;
+                &::after {
+                    margin: 0 0 0 5px;
+                    content: "\00BB";
+                }
+            }
+            &_youtube { 
+                h4 { margin: 12px 0; }
+                a { margin: 46px 0 0; }
+            }
+        }
+        &__bg {
+            cursor: initial;
+            @include positionedItem(absolute,0,0,0,0,-1);
+            img { @include imgFix; }
+        }
+        &-blockquote {
+            cursor: initial;
+            text-align: center;
+            @include fontSet($white,0,600 normal 2.2rem/2.4rem $raleway);
+            padding: 85px 30px 86px;
+            &::after,
+            &::before {
+                @include fontSet($accentColor,0,900 normal 8rem/1 serif)
+                @include centerHor;
+            }
+            &:before {
+                content: open-quote;;
+                top: 30px;
+            }
+            &:after {
+                content: close-quote;
+                bottom: -10px;
+            }
+            &__footer {
+                margin: 20px 0 0;
+                @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
+            }
+        }
+    }
+}
+
+@include ad(1);
+@import "footer-style-3";

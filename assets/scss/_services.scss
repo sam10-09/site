@@ -2,19 +2,19 @@
 
 .services {
     &-style-2 {
-        background: #fafafa;
+        background: $snow;
         padding: 116px 0 80px;
         .container { @include flexPrSet(null,null,space-between,null); }
         &-el {
             flex: 0 0 270px;
-            background: #fff;
+            background: $white;
             border-radius: 5px;
             text-align: center;
             padding: 55px 30px 30px;
             cursor: pointer;
             @include positionedItem(relative,null,null,null,null,null);
             &__icon {
-                background: #363636;
+                background: $eclipse;
                 border-radius: 50%;
                 width: 70px;
                 height: 70px;
@@ -25,21 +25,21 @@
             }
             h2 {
                 transition: .4s;
-                @include fontSet(#363636,0,700 normal 2.4rem/1 $raleway);
+                @include fontSet($eclipse,0,700 normal 2.4rem/1 $raleway);
             }
             p {
                 margin: 25px 0 30px;
-                @include fontSet(#959595,0,400 normal 1.4rem/2rem $raleway);
+                @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $raleway);
             }
             &:hover {
-                .services-style-2-el__icon { background: #e5493a; }
-                h2 { color: #e5493a; }
-                &:after { background: #e5493a; }
+                .services-style-2-el__icon { background: $accentColor; }
+                h2 { color: $accentColor; }
+                &:after { background: $accentColor; }
             }
             &:after {
                 content: "";
                 height: 2px;
-                background: #363636;
+                background: $eclipse;
                 @include positionedItem(absolute,null,100px,30px,100px,null);
             }
         }

@@ -1,19 +1,34 @@
-$black: #252525;
-$white: #ffffff;
-$tomato: #e5493a;
-$brownish-grey: #636363;
+$black: #000;
+$god-gray: #111111;
+$matte-black: #171717;
+$nero: #252525;
+$eclipse: #363636;
 $greyish-brown: #464646;
-$warm-grey: #959595;
+$davy-grey: #555;
+$granite-gray: #595959;
+$brownish-grey: #636363;
+$maya-blue: #6dcff6;
+$dim-gray: #707070;
+$suva-grey: #898989;
 $booger: #8dc63f;
+$warm-grey: #959595;
+$light-sky-blue: #c7efff;
+$light-gray: #ccc;
+$chinese-white: #e1e1e1;
+$accentColor: #e5493a;
+$bright-gray: #ebebeb;
+$white-smoke: #f2f2f2;
+$blush: #f4897e;
+$snow: #fafafa;
+$white: #fff;
+
+
 $black-0: rgba(54, 54, 54, 0);
 $white-25: rgba(255, 255, 255, 0.25);
 $tomato-0: rgba(229, 73, 58, 0);
 $pinkish-grey: #cccccc;
-$blush: #f4897e;
 $white-0: rgba(255, 255, 255, 0);
 $white-20: rgba(255, 255, 255, 0.2);
-$lightblue: #6dcff6;
-$light-sky-blue: #c7efff;
 $pale-red: #d4392a;
 $dark: #172322;
 $cool-grey: #9ca0a0;
@@ -84,6 +99,7 @@ $raleway: raleway;
         h2 {
             margin: 0 0 20px;
             @include fontSet($mainColor,0,700 normal 3rem/1 $raleway);
+            span { color: $accentColor; }
         }
         &::after {
             content: "";
@@ -127,13 +143,65 @@ $raleway: raleway;
     }
 }
 @mixin footerMiniTitle {
-    @include fontSet(#fff,0,700 normal 2.4rem/1 $roboto);
+    @include fontSet($white,0,700 normal 2.4rem/1 $roboto);
     &::after {
         content: "";
         display: block;
-        background: #e5493a;
+        background: $accentColor;
         width: 70px;
         height: 2px;
         margin: 20px 0;
+    }
+}
+@mixin toTopArrow ($bottomOffset:375px) {
+    width: 50px;
+    @include positionedItem(absolute,200vh,calc((50vw - 635px)/2),0,null,4);
+    a {
+        height: 50px;
+        width: 50px;
+        text-decoration: none;
+        font-size: 2rem;
+        color: $granite-gray;
+        background: rgba(0, 0, 0, .25);
+        transition: .4s;
+        @include flexPrSet(null,null,center,center);
+        @include positionedItem(sticky,calc(100vh - #{$bottomOffset}),null,null,null,4);
+        &:hover {
+            color: $accentColor;
+            background: #000;
+        }
+    }
+}
+@mixin ad ($variance:3) {
+    $boxPadding: 43px 0;
+    $bgColor: $booger;
+    $upperText: 700 normal 3.2rem/1 $raleway;
+    $subText: 400 normal 2.4rem/1 $raleway;
+    @if $variance == 3 {
+        $boxPadding: 56px 0;
+        $upperText: 800 normal 3.8rem/1 $raleway;
+        $subText: 300 normal 2.4rem/1 $raleway;
+    } @else if $variance == 2 { $bgColor: $accentColor; }
+    .ad {
+        background: $bgColor;
+        .container {
+            padding: $boxPadding;
+            @include flexPrSet(null,null,space-between,null);
+        }
+        &__text {
+            h2 { @include fontSet($white,0,$upperText); }
+            p { @include fontSet($white,0,$subText); }
+        }
+        &__link {
+            align-self: center;
+            a {
+                display: block;
+                padding: 17px 37px;
+                background: $nero;
+                border-radius: 5px;
+                text-decoration: none;
+                @include fontSet($white,0,800 normal 1.4rem/2rem $raleway);
+            }
+        }
     }
 }

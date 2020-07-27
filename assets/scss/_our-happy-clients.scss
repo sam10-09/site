@@ -1,0 +1,37 @@
+@import "utils";
+
+.our-happy {
+    background: url('../img/our-happy-bg.png') center center/cover no-repeat $accentColor;
+    .container { padding: 80px 0 85px; }
+    &__slider {
+        list-style: none;
+        @include positionedItem(relative,null,null,null,null,null);
+        @include slick;
+        @include slickArrows;
+        .slick-arrow {
+            background: rgba($white,.1);
+            width: 30px;
+            height: 30px;
+            border-radius: 3px;
+            @include centerVer(2);
+            @include flexPrSet(null,null,center,center);
+            @include fontSet($white,0,900 1.5rem/1 'Font Awesome 5 Free');
+            &:hover { background: $eclipse; }
+        }
+        .slick-prev{
+            left: 0;
+            &::before { content: "\f053"; }
+        }
+        .slick-next {
+            right: 0;
+            &::before { content: "\f054"; }
+        }
+        li {
+            max-width: 920px;
+            margin: 0 auto;
+            width: 100%;
+            div { @include flexPrSet(null,null,space-between,center); }
+        }
+
+    }
+}

@@ -1,21 +1,21 @@
-@import 'utils';
+@import "utils";
 
 .footer {
-    background: #252525;
+    background: $nero;
     .container {
-        padding: 60px 0;
+        padding: 60px 0 70px;
         @include flexPrSet(null,wrap,space-between,null);
     }
     .about-exo {
         max-width: 270px;
         flex: 0 0 100%;
-        &__inner { @include fontSet(#636363,0,400 normal 1.4rem/2rem $roboto); }
+        &__inner { @include fontSet($brownish-grey,0,400 normal 1.4rem/2rem $roboto); }
         &__header {
             margin: 0 0 0 -5px;
             @include flexPrSet(null,null,null,center);
             h3 {
                 margin: 30px 0 0 35px;
-                @include fontSet(#363636,0,700 normal 1rem/1 $roboto);
+                @include fontSet($eclipse,0,700 normal 1rem/1 $roboto);
             }
         }
         &__text { margin: 15px 0; }
@@ -23,7 +23,7 @@
             margin: 0 0 35px;
             a {
                 text-decoration: none;
-                color: #e5493a;
+                color: $accentColor;
                 cursor: pointer;
                 &::after {
                     margin: 0 0 0 5px;
@@ -32,8 +32,8 @@
             }
         }
         &__form {
-            @include fontSet(#464646,0,400 normal 1.4rem/2rem $roboto);
-            p { @include fontSet(#fff,0,700 normal 1.8rem/2rem $roboto); }
+            @include fontSet($greyish-brown,0,400 normal 1.4rem/2rem $roboto);
+            p { @include fontSet($white,0,700 normal 1.8rem/2rem $roboto); }
             label {
                 display: block;
                 overflow: hidden;
@@ -42,7 +42,7 @@
                 @include positionedItem(relative,null,null,null,null,null);
                 &::after {
                     content: "\f0e0";
-                    @include fontSet(#363636,0,900 1.4rem/1 'Font Awesome 5 Free');
+                    @include fontSet($eclipse,0,900 normal 1.4rem/1 'Font Awesome 5 Free');
                     @include positionedItem(absolute,15px,15px,15px,null,null);
                 }
                 input {
@@ -50,9 +50,9 @@
                     width: 100%;
                     outline: 0;
                     border: 0;
-                    background: #171717;
+                    background: $matte-black;
                     padding: 10px 30px;
-                    @include fontSet(#464646,0,400 normal 1.4rem/2rem $roboto);
+                    @include fontSet($greyish-brown,0,400 normal 1.4rem/2rem $roboto);
                     &::placeholder { @include fontSet(inherit,inherit,inherit) }
                 }
             }
@@ -73,8 +73,8 @@
             @include flexPrSet(null,null,null,null);
             &:hover {
                 .latest-news-article__img .fa-search { opacity: 1; }
-                .latest-news-article__content p { color: #e5493a; }
-                .latest-news-article__content span { color: #fff; }
+                .latest-news-article__content p { color: $accentColor; }
+                .latest-news-article__content span { color: $white; }
             }
             &__img {
                 overflow: hidden;
@@ -89,9 +89,9 @@
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-                    background: #252525;
+                    background: $nero;
                     font-size: 1rem;
-                    color: #fff;
+                    color: $white;
                     opacity: 0;
                     transition: .4s;
                     cursor: pointer;
@@ -101,10 +101,10 @@
             }
             &__content {
                 transition: .4s;
-                @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+                @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
                 span {
                     display: inline-block;
-                    color: #464646;
+                    color: $greyish-brown;
                     margin: 5px 0 0;
                 }
             }
@@ -114,7 +114,7 @@
                 &::before {
                     content: "";
                     height: 1px;
-                    background: #363636;
+                    background: $eclipse;
                     @include positionedItem(absolute,-16px,0,null,0,null);
                 }
             }
@@ -132,14 +132,14 @@
         &-article {
             list-style: none;
             @include flexPrSet(null,null,null,null);
-            @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+            @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
             &:not(:first-child) {
                 margin: 31px 0 0;
                 @include positionedItem(relative,null,null,null,null,null);
                 &::before {
                     content: "";
                     height: 1px;
-                    background: #363636;
+                    background: $eclipse;
                     @include positionedItem(absolute,-16px,0,null,0,null);
                 }
             }
@@ -148,21 +148,22 @@
                 height: 20px;
                 flex: 0 0 100%;
                 border-radius: 50%;
-                background: #464646;
+                background: $greyish-brown;
                 font-size: 1rem;
                 margin: 0 15px 0 0;
                 @include flexPrSet(null,null,center,center);
             }
             &__content {
+                padding: 0 0 3px;
                 a {
-                    color: #fff;
+                    color: $white;
                     text-decoration: none;
                 }
                 p::after {
                     display: block;
                     content: attr(data-date);
                     margin: 15px 0 0;
-                    @include fontSet(#464646,0,400 normal 1.3rem/2rem $roboto);
+                    @include fontSet($greyish-brown,0,400 normal 1.3rem/2rem $roboto);
                 }
             }
         }
@@ -170,7 +171,7 @@
     .get-in-touch {
         max-width: 270px;
         flex: 0 0 100%;
-        @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+        @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
         &__title {
             padding: 20px 0 0;
             margin: 0 0 10px;
@@ -185,23 +186,23 @@
                 &::before {
                     content: "";
                     height: 1px;
-                    background: #363636;
+                    background: $eclipse;
                     @include positionedItem(absolute,-24px,0,null,0,null);
                 }
             }
             div {
                 &:nth-child(odd) {
-                    color: #636363;
+                    color: $brownish-grey;
                 }
                 &:nth-child(even) {
                     max-width: 170px;
                     flex-basis: 100%;
                 }
-                span { @include fontSet(#636363,0,400 normal 1.3rem/2rem $roboto); }
+                span { @include fontSet($brownish-grey,0,400 normal 1.3rem/2rem $roboto); }
                 a {
                     color: inherit; 
                     text-decoration: none;
-                    &[href^="mailto"] { color: #e5493a; }
+                    &[href^="mailto"] { color: $accentColor; }
                 }
             }
             ul { @include flexPrSet(null,wrap,null,null); }
@@ -211,20 +212,20 @@
                 width: 16px;
                 height: 16px;
                 border-radius: 3px;
-                background: #464646;
+                background: $greyish-brown;
                 font-size: 1rem;
                 transition: .4s;
                 @include flexPrSet(null,null,center,center);
                 &:not(:last-child) { margin: 0 5px 5px 0; }
                 &:hover {
-                    background: #e5493a;
-                    color: #000;
+                    background: $accentColor;
+                    color: $black;
                 }
             }
         }
     }
     &__nav {
-        background: #111111;
+        background: $god-gray;
         .container {
             padding: 30px 0;
             @include flexPrSet(null,null,null,null);
@@ -237,13 +238,13 @@
         li:not(first-child) { margin: 0 0 0 20px; }
         a {
             text-decoration: none;
-            @include fontSet(#464646,0,700 normal 1.4rem/2rem $raleway);
+            @include fontSet($greyish-brown,0,700 normal 1.4rem/2rem $raleway);
             &.active,
-            &:hover { color: #e5493a; }
+            &:hover { color: $accentColor; }
         }
     }
     &__copyright {
-        @include fontSet(#464646,0,400 normal 1.4rem/2rem $roboto);
-        span { color: #959595; }
+        @include fontSet($greyish-brown,0,400 normal 1.4rem/2rem $roboto);
+        span { color: $warm-grey; }
     }
 }

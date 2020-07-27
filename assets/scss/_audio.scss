@@ -1,0 +1,57 @@
+@mixin audioPlayer($bgColor,$progressColor,$progressCurrentColor,$progressBufferColor,$elementsColor){
+    #audio {
+        align-items: center;
+        background: $bgColor;
+        color: $elementsColor;
+        display: flex;
+        padding: 10px 30px 10px 10px;
+        position: relative;
+        #src { display: none; }
+        &-play-pause {
+            &:before {
+                content: "\f04b";
+                font: 900 normal 18px/1 'Font Awesome 5 Free';
+            }
+            &.pause:before { content: "\f04c"; }
+        }
+        &-current-pos { margin: 0 10px; }
+        &-progress {
+            background: $progressColor;
+            flex: 1;
+            height: 6px;
+            transition: .4s;
+            &__current {
+                background: $progressCurrentColor;
+                height: 100%;
+            }
+        }
+        &-length { margin: 0 10px; }
+        &-volume {
+            background: inherit;
+            display: flex;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 1;
+            &:hover #audio-volume__down {
+                display: block;
+                visibility: visible;
+            }
+            &__up::before {
+                content: "\f028";
+                display: block;
+                font: 900 normal 18px/1 'Font Awesome 5 Free';
+            }
+            &__down {
+                margin: 0 15px;
+                transition: 1s;
+                visibility: hidden;
+                &::before {
+                    content: "\f027";
+                    display: block;
+                    font: 900 normal 18px/1 'Font Awesome 5 Free';
+                }
+            }
+        }
+    }
+}

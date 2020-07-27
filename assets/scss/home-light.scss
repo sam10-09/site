@@ -1,8 +1,10 @@
 @import 'utils';
+
 :root{
     font: 400 normal 62.5%/1.2 sans-serif;
     scroll-behavior: smooth;
 }
+
 *,
 *::after,
 *::before {
@@ -12,25 +14,7 @@
 }
 .wrap {
     @include positionedItem(relative,null,null,null,null,null);
-    .to-top {
-        width: 50px;
-        @include positionedItem(absolute,200vh,calc((50vw - 635px)/2),0,null,4);
-        a {
-            height: 50px;
-            width: 50px;
-            text-decoration: none;
-            font-size: 2rem;
-            color: #595959;
-            background: rgba(0, 0, 0, .25);
-            transition: .4s;
-            @include flexPrSet(null,null,center,center);
-            @include positionedItem(sticky,calc(100vh - 375px),null,null,null,4);
-            &:hover {
-                color: #e5493a;
-                background: #000;
-            }
-        }
-    }
+    .to-top { @include toTopArrow; }
 }
 
 .container {
@@ -38,20 +22,20 @@
     margin: 0 auto;
 }
 
-@import 'header-style-3';
+@import "header-style-3";
 
 .slider {
     @include positionedItem(relative,null,null,null,null,null);
     @include slick;
     @include slickArrows;
     .slick-arrow {
-        background: rgba(#fff,.1);
+        background: rgba($white,.1);
         width: 42px;
         height: 42px;
         @include centerVer(2);
         @include flexPrSet(null,null,center,center);
-        @include fontSet(#fff,0,900 1.5rem/1 'Font Awesome 5 Free');
-        &:hover { background: #363636; }
+        @include fontSet($white,0,900 1.5rem/1 'Font Awesome 5 Free');
+        &:hover { background: $eclipse; }
     }
     .slick-prev{
         left: 0;
@@ -71,152 +55,40 @@
             @include flexPrSet(null,wrap,center,null);
             h1 {
                 margin: 0;
-                @include fontSet(#fff,0,800 normal 6.8rem/1.2 $raleway);
+                @include fontSet($white,0,800 normal 6.8rem/1.2 $raleway);
             }
-            h2 { @include fontSet(#fff,0,800 normal 5.1rem/1.2 $raleway); }
+            h2 { @include fontSet($white,0,800 normal 5.1rem/1.2 $raleway); }
             p {
                 margin: 10px 0 40px;
-                @include fontSet(#fff,0,800 normal 2.7rem/3rem $raleway);
+                @include fontSet($white,0,800 normal 2.7rem/3rem $raleway);
             }
             a {
                 text-decoration: none;
                 padding: 16px 32px 18px;
-                border: 2px solid #fff;
+                border: 2px solid $white;
                 background: transparent;
                 border-radius: 5px;
                 transition: .4s;
-                @include fontSet(#fff,0,800 normal 1.4rem/1.2 $raleway);
+                @include fontSet($white,0,800 normal 1.4rem/1.2 $raleway);
                 & + a { margin: 0 0 0 30px; }
                 &:hover {
-                    background: #363636;
-                    border-color: #363636;
+                    background: $eclipse;
+                    border-color: $eclipse;
                 }
             }
         }
     }
 }
 
-@import 'txt-boxes';
-@import 'services';
-
-.portfolio {
-    padding: 70px 0 80px;
-    .title { @include sectionTitle(#363636,#959595); }
-    &-categories {
-        margin: 40px auto;
-        @include flexPrSet(null,null,center,null);
-        ul {
-            padding: 0 20px;
-            background: #fafafa;
-            border-radius: 3px;
-            list-style: none;
-            @include flexPrSet(null,null,center,null);
-        }
-        li + li { margin: 0 0 0 15px; }
-        label { display: block; }
-        input {
-            display: none;
-            &:checked {
-                & + span {
-                    color: #e5493a;
-                    &::after { background: #e5493a; }
-                }
-            }
-        }
-        span {
-            display: block;
-            padding: 12px 15px 8px;
-            cursor: pointer;
-            transition: .4s;
-            @include fontSet(#555,0,700 normal 1.4rem/2rem $raleway);
-            @include positionedItem(relative,null,null,null,null,null);
-            &::after {
-                content: "";
-                height: 2px;
-                background: transparent;
-                transition: .4s;
-                @include positionedItem(absolute,null,15px,0,15px,null);
-            }
-            &:hover {
-                color: #e5493a;
-                &::after { background: #e5493a; }
-            }
-        }
-    }
-    &-work {
-        cursor: pointer;
-        list-style: none;
-        flex: 0 0 20%;
-        padding: 13.4375% 0 0;
-        margin: 0 0 40px;
-        @include positionedItem(relative,null,null,null,null,null);
-        img {
-            display: block;
-            max-width: 100%;
-            object-fit: cover;
-            @include positionedItem(absolute,0,0,0,0,null);
-        }
-        &:hover {
-            .portfolio-work__inner { opacity: 1; }
-            img { opacity: .85; }
-        }
-        &__inner {
-            padding: 10% 0 0 5%;
-            opacity: 0;
-            white-space: nowrap;
-            transition: .4s;
-            @include positionedItem(absolute,0,0,0,0,null);
-            &::after {
-                content: "";
-                height: 2px;
-                width: 70px;
-                background: #e5493a;
-                transition: .4s;
-                @include positionedItem(absolute,calc(10% + 70px),null,null,5%,null);
-            }
-        }
-        h2 {
-            margin: 0 0 10px;
-            @include fontSet(#fff,0,700 normal 2.4rem/1 $raleway);
-        }
-        p { @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto); }
-        &s { @include flexPrSet(null,wrap,null,null); }
-        &__hover {
-            @include flexPrSet(null,null,null,null);
-            @include positionedItem(absolute,null,2.083vw,2.083vw,null,null);
-            i {
-                color: #fff;
-                width: 2.1875vw;
-                height: 2.1875vw;
-                border-radius: 50%;
-                background: #252525;
-                transition: .4s;
-                @include flexPrSet(null,null,center,center);
-                & + i { margin: 0 0 0 .416667vw }
-                &:hover { background: #e5493a; }
-            }
-        }
-    }
-    &__load-more {
-        button {
-            display: block;
-            border: 0;
-            outline: 0;
-            background: #363636;
-            margin: 0 auto;
-            padding: 11px 30px 10px;
-            cursor: pointer;
-            border-radius: 3px;
-            @include fontSet(#fff,0,800 normal 1.2rem/2rem $raleway);
-        }
-    }
-}
+@import "txt-boxes";
+@import "services";
+@import "portfolio-grid-10";
 
 .stuffs {
     background: url('../img/stuff-bg.png') center center/cover no-repeat;
     padding: 70px 0 95px;
     &__title {
-        @include sectionTitle(#fff,#959595,#e5493a);
+        @include sectionTitle($white,$warm-grey,$accentColor);
         margin: 0 auto 70px;
     }
     &__inner { @include flexPrSet(null,null,space-between,null); }
@@ -229,7 +101,7 @@
             content: "";
             height: 2px;
             width: 70px;
-            background: #555;
+            background: $davy-grey;
             @include positionedItem(absolute,null,0,0,100px,null);
         }
         &__circle-bar {
@@ -239,19 +111,19 @@
             border-radius: 50%;
             border: 5px solid currentcolor;
             @include flexPrSet(null,null,center,center);
-            @include fontSet(#fff,0,700 normal 3.6rem/1 $raleway);
+            @include fontSet($white,0,700 normal 3.6rem/1 $raleway);
         }
         &__title {
             margin:  0 0 20px;
-            @include fontSet(#e5493a,0,700 normal 2.4rem/1 $raleway);
+            @include fontSet($accentColor,0,700 normal 2.4rem/1 $raleway);
         }
-        &__line { @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto); }
+        &__line { @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto); }
     }
 }
 
 .why {
     padding: 70px 0 80px;
-    &__title { @include sectionTitle(#363636,#959595); }
+    &__title { @include sectionTitle($eclipse,$warm-grey); }
     .container { @include flexPrSet(null,null,space-between,null); }
     .accordion {
         flex: 0 0 570px;
@@ -262,10 +134,10 @@
                 display: none;
                 &:checked {
                     & + label {
-                        background: #363636;
-                        .fas { background: #e5493a; }
+                        background: $eclipse;
+                        .fas { background: $accentColor; }
                         .fas::before { transform: rotate(90deg); }
-                        span:first-child { color: #fff; }
+                        span:first-child { color: $white; }
                     }
                     & ~ div {
                         padding: 25px 30px 40px;
@@ -286,7 +158,7 @@
                     transition: .4s;
                     padding: 13px 0 10px;
                     &:first-child {
-                        @include fontSet(#363636,0,700 normal 1.8rem/2rem $raleway);
+                        @include fontSet($eclipse,0,700 normal 1.8rem/2rem $raleway);
                         margin: 0 30px 0 0;
                     }
                 }
@@ -294,7 +166,7 @@
                     margin: 0 0 0 auto;
                     height: 43px;
                     width: 43px;
-                    background: #363636;
+                    background: $eclipse;
                     font-size: 2rem;
                     @include flexPrSet(null,null,center,center);
                     &::before { transition: .4s; }
@@ -305,7 +177,7 @@
                 height: 0;
                 padding: 0 30px;
                 transition: .4s;
-                @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+                @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
                 p + p { margin: 20px 0 0; }
             }
         }
@@ -315,51 +187,13 @@
             flex: 0 0 570px;
             max-width: 570px;
         }
-        &-slider {
-            @include slick;
-            @include slickDots;
-            .slick-dots {
-                margin: 0 0 0 30px;
-                button {
-                    background: #ebebeb;
-                    width: 10px;
-                    height: 10px;
-                    margin: 0 5px 0 0;
-                }
-            }
-            .slick-active button { background: #e5493a; }
-        }
-        &__item {
-            list-style: none;
-            background: #f2f2f2;
-            padding: 30px;
-            margin: 0 0 40px;
-            @include flexPrSet(null,null,null,null);
-            @include positionedItem(relative,null,null,null,null,null);
-            &::after {
-                content: "";
-                transform: skewX(15deg);
-                border: 25px solid transparent;
-                border-right-color: #f2f2f2;
-                @include positionedItem(absolute,null,75px,-25px,null,null);
-            }
-        }
-        &__img { margin: 0 30px 0 0; }
-        &__body { @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto); }
-        &__author {
-            @include flexPrSet(null,null,space-between,null);
-            span {
-                &:first-child { @include fontSet(#363636,0,600 normal 1.8rem/2rem $raleway); }
-                &:last-child {color: #ccc; }
-            }
-        }
-        &__text { margin: 10px 0 0; }
+        @import "review-slider";
     }
 }
 
 .blogs {
     padding: 70px 0 80px;
-    &__title { @include sectionTitle(#363636,#959595); }
+    &__title { @include sectionTitle($eclipse,$warm-grey); }
     &-slider {
         @include slick;
         @include slickDots;
@@ -373,7 +207,7 @@
                 margin: 0 5px 0 0;
             }
         }
-        .slick-active button { background: #e5493a; }
+        .slick-active button { background: $accentColor; }
         &-item {
             list-style: none;
             @include flexPrSet(null,null,space-between,null);
@@ -385,24 +219,24 @@
             @include flexPrSet(null,null,null,null);
             @include positionedItem(relative,null,null,null,null,null);
             &:hover {
-                .blogs-slider-post__inner::after { background: #e5493a; };
+                .blogs-slider-post__inner::after { background: $accentColor; };
                 .blogs-slider-post__link a,
-                .blogs-slider-post__title { color: #e5493a; }
-                .blogs-slider-post__category i { background: #e5493a; }
+                .blogs-slider-post__title { color: $accentColor; }
+                .blogs-slider-post__category i { background: $accentColor; }
                 .blogs-slider-post__hover { opacity: 1; }
             }
             &__category {
                 @include positionedItem(absolute,0,null,null,0,2);
                 i {
-                    color: #fff;
+                    color: $white;
                     width: 42px;
                     height: 42px;
-                    background: #252525;
+                    background: $nero;
                     font-size: 2rem;
                     transition: .4s;
                     @include flexPrSet(null,null,center,center);
                     & + i { margin: 0 0 0 8px; }
-                    &:hover { background-color: #e5493a; }
+                    &:hover { background-color: $accentColor; }
                 }
             }
             &__hover {
@@ -411,16 +245,16 @@
                 @include flexPrSet(null,null,space-between,null);
                 @include center(2);
                 i {
-                    color: #fff;
+                    color: $white;
                     width: 42px;
                     height: 42px;
                     border-radius: 50%;
-                    background: #252525;
+                    background: $nero;
                     font-size: 1.4rem;
                     transition: .4s;
                     @include flexPrSet(null,null,center,center);
                     & + i { margin: 0 0 0 8px; }
-                    &:hover { background-color: #e5493a; }
+                    &:hover { background-color: $accentColor; }
                 }
             }
             &__img {
@@ -432,12 +266,12 @@
             }
             &__inner {
                 padding: 30px;
-                @include fontSet(#959595,0,normal 400 1.4rem/2rem $roboto);
+                @include fontSet($warm-grey,0,normal 400 1.4rem/2rem $roboto);
                 @include positionedItem(relative,null,null,null,null,null);
                 &::after {
                     content: "";
                     height: 2px;
-                    background: #363636;
+                    background: $eclipse;
                     transition: .4s;
                     @include positionedItem(absolute,null,30px,0,30px,null);
                 }
@@ -446,13 +280,13 @@
             &__title {
                 margin: 15px 0;
                 transition: .4s;
-                @include fontSet(#363636,0,normal 600 1.8rem/2rem $raleway);
+                @include fontSet($eclipse,0,normal 600 1.8rem/2rem $raleway);
             }
             &__link {
                 margin: 30px 0 0;
                 a {
                     text-decoration: none;
-                    color: #363636;
+                    color: $eclipse;
                     transition: .4s;
                     &::after {
                         margin: 0 0 0 5px;
@@ -468,20 +302,20 @@
     padding: 70px 0 60px;
     background: url("../img/many-theme-bg-2.png") calc(50vw - 609px) 217px no-repeat,
                 url("../img/many-theme-bg.png") center center/cover no-repeat;
-    &__title { @include sectionTitle(#363636,#959595); }
+    &__title { @include sectionTitle($eclipse,$warm-grey); }
     .container { @include flexPrSet(null,null,flex-end,null); }
     &-option {
         list-style: none;
         margin: 0 0 20px;
         cursor: pointer;
-        @include fontSet(#959595,0,400 normal 1.4rem/2rem $roboto);
+        @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto);
         @include flexPrSet(null,null,null,flex-start);
         &:hover {
             .main-theme-option__icon {
-                border-color: #e5493a;
+                border-color: $accentColor;
                 img { filter: invert(36%) sepia(68%) saturate(1338%) hue-rotate(333deg) brightness(92%) contrast(95%); }
             }
-            .main-theme-option__content h3 { color: #e5493a; }
+            .main-theme-option__content h3 { color: $accentColor; }
         }
         &s {
             margin: 90px 0 0;
@@ -504,46 +338,12 @@
             h3 {
                 margin: 0 0 10px;
                 transition: .4s;
-                @include fontSet(#363636,0,700 normal 2rem/1 $raleway);
+                @include fontSet($eclipse,0,700 normal 2rem/1 $raleway);
             }
             p { transition: .4s; }
         }
     }
 }
-.our-happy {
-    background: url('../img/our-happy-bg.png') center center/cover no-repeat #e5493a;
-    .container { padding: 80px 0 85px; }
-    &__slider {
-        list-style: none;
-        @include positionedItem(relative,null,null,null,null,null);
-        @include slick;
-        @include slickArrows;
-        .slick-arrow {
-            background: rgba(#fff,.1);
-            width: 30px;
-            height: 30px;
-            border-radius: 3px;
-            @include centerVer(2);
-            @include flexPrSet(null,null,center,center);
-            @include fontSet(#fff,0,900 1.5rem/1 'Font Awesome 5 Free');
-            &:hover { background: #363636; }
-        }
-        .slick-prev{
-            left: 0;
-            &::before { content: "\f053"; }
-        }
-        .slick-next {
-            right: 0;
-            &::before { content: "\f054"; }
-        }
-        li {
-            max-width: 920px;
-            margin: 0 auto;
-            width: 100%;
-            div { @include flexPrSet(null,null,space-between,center); }
-        }
 
-    }
-}
-
+@import "our-happy-clients";
 @import "footer-style-3";

@@ -1,0 +1,35 @@
+@import "utils";
+
+.navigation {
+    background: $accentColor;
+    @include fontSet($white,0,500 normal 1.2rem/2rem $roboto);
+    .container {
+        padding: 25px 0 28px;
+        @include flexPrSet(null,null,space-between,null);
+    }
+    &__current-pos { font-size: 1.8rem; }
+    &__links {
+        @include flexPrSet(null,null,null,null);
+        p {
+            user-select: none;
+            @include fontSet($blush,0,400 normal 1.2rem/2rem $roboto);
+        }
+        ul { @include flexPrSet(null,null,null,null); }
+        li {
+            margin: 0 0 0 10px;
+            list-style: none;
+            & + li {
+                &:before {
+                    content: "\00B7";
+                    color: $white;
+                    margin: 0 10px 0 0;
+                }
+            }
+            &:last-child {  @include fontSet($white,0,900 normal 1.2rem/2rem $roboto); }
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}

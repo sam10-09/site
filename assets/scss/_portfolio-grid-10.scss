@@ -1,0 +1,114 @@
+@import "utils";
+
+.portfolio {
+    padding: 70px 0 80px;
+    .title { @include sectionTitle($eclipse,$warm-grey); }
+    &-categories {
+        margin: 40px auto;
+        @include flexPrSet(null,null,center,null);
+        ul {
+            padding: 0 20px;
+            background: $snow;
+            border-radius: 3px;
+            list-style: none;
+            @include flexPrSet(null,null,center,null);
+        }
+        li + li { margin: 0 0 0 15px; }
+        label { display: block; }
+        input {
+            display: none;
+            &:checked {
+                & + span {
+                    color: $accentColor;
+                    &::after { background: $accentColor; }
+                }
+            }
+        }
+        span {
+            display: block;
+            padding: 12px 15px 8px;
+            cursor: pointer;
+            transition: .4s;
+            @include fontSet($davy-grey,0,700 normal 1.4rem/2rem $raleway);
+            @include positionedItem(relative,null,null,null,null,null);
+            &::after {
+                content: "";
+                height: 2px;
+                background: transparent;
+                transition: .4s;
+                @include positionedItem(absolute,null,15px,0,15px,null);
+            }
+            &:hover {
+                color: $accentColor;
+                &::after { background: $accentColor; }
+            }
+        }
+    }
+    &-work {
+        &s { margin: 0 0 40px; }
+        cursor: pointer;
+        list-style: none;
+        flex: 0 0 20%;
+        padding: 13.4375% 0 0;
+        @include positionedItem(relative,null,null,null,null,null);
+        img {
+            display: block;
+            max-width: 100%;
+            object-fit: cover;
+            @include positionedItem(absolute,0,0,0,0,null);
+        }
+        &:hover {
+            .portfolio-work__inner { opacity: 1; }
+            img { opacity: .85; }
+        }
+        &__inner {
+            padding: 10% 0 0 5%;
+            opacity: 0;
+            white-space: nowrap;
+            transition: .4s;
+            @include positionedItem(absolute,0,0,0,0,null);
+            &::after {
+                content: "";
+                height: 2px;
+                width: 70px;
+                background: $accentColor;
+                transition: .4s;
+                @include positionedItem(absolute,calc(10% + 70px),null,null,5%,null);
+            }
+        }
+        h2 {
+            margin: 0 0 10px;
+            @include fontSet($white,0,700 normal 2.4rem/1 $raleway);
+        }
+        p { @include fontSet($warm-grey,0,400 normal 1.4rem/2rem $roboto); }
+        &s { @include flexPrSet(null,wrap,null,null); }
+        &__hover {
+            @include flexPrSet(null,null,null,null);
+            @include positionedItem(absolute,null,2.083vw,2.083vw,null,null);
+            i {
+                color: $white;
+                width: 2.1875vw;
+                height: 2.1875vw;
+                border-radius: 50%;
+                background: $nero;
+                transition: .4s;
+                @include flexPrSet(null,null,center,center);
+                & + i { margin: 0 0 0 .416667vw }
+                &:hover { background: $accentColor; }
+            }
+        }
+    }
+    &__load-more {
+        button {
+            display: block;
+            border: 0;
+            outline: 0;
+            background: $eclipse;
+            margin: 0 auto;
+            padding: 11px 30px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            @include fontSet($white,0,800 normal 1.2rem/2rem $raleway);
+        }
+    }
+}
